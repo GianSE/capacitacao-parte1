@@ -33,7 +33,8 @@ const DB_PASSWORD = process.env.DB_PASSWORD
 //entregar uma porta
 mongoose
     .connect(
-        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.bpllvly.mongodb.net/bancodaapi?retryWrites=true&w=majority`
+        //Conectar usando um arquivo .env
+        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@api-parte1.pqv2ajh.mongodb.net/?retryWrites=true&w=majority&appName=api-parte1`
     )
     .then(() =>{
         console.log("Conectamos ao MongoDB!")
