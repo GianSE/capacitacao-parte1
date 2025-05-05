@@ -17,8 +17,8 @@ const alunoSchema = new mongoose.Schema({
 });
 
 // Middleware para atualizar a data antes de salvar
-alunoSchema.pre('save', function (next) {
-    this.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
+alunoSchema.pre('findOneAndUpdate', function (next) {
+    this._update.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
     next();
 });
 

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const Person = require('../models/Aluno')
+const Aluno = require('../models/Aluno')
 
 //Create - criação de dados
 router.post('/', async (req, res) => {
@@ -72,36 +72,38 @@ router.get('/:id', async (req, res) => {
 
 })
 
-//Update - atualização dos dados (PUT, PATCH)
+// Update - atualização dos dados (PATCH)
 router.patch('/:id', async (req, res) => {
+    const id = req.params.id;
 
-    const id = req.params.id
+    const { name, age, ra, cpf } = req.body;
 
-    const{ name, age, ra, cpf, createdAt, updatedAt } = req.body
-
-    const person = {
+    const aluno = {
         name,
         age,
         ra,
-        cpf,
-        createdAt,
-        updatedAt
-    }
+        cpf
+        // Não incluímos createdAt nem updatedAt aqui,
+        // pois updatedAt será tratado automaticamente pelo middleware
+    };
 
     try {
-        const updatedAluno = await Aluno.updateOne({_id: id}, aluno)
+        const updatedAluno = await Aluno.findOneAndUpdate(
+            { _id: id },
+            aluno,
+            { new: true } // retorna o documento já atualizado
+        );
 
-        if(updatedAluno.matchedCount === 0){
-            res.status(422).json({message: 'O aluno não foi encontrado!'})
-            return;
+        if (!updatedAluno) {
+            return res.status(422).json({ message: 'O aluno não foi encontrado!' });
         }
 
-        res.status(200).json(aluno)
+        res.status(200).json(updatedAluno);
 
-    } catch (error){
-        res.status(500).json({ erro: error})
+    } catch (error) {
+        res.status(500).json({ erro: error });
     }
-})
+});
 
     // Delete - deletar dados
 router.delete('/:id', async (req, res) => {
@@ -114,7 +116,7 @@ router.delete('/:id', async (req, res) => {
 
         await Aluno.deleteOne({_id: id})
 
-        if(!person) {
+        if(!aluno) {
             res.status(422).json({message: 'O aluno não foi encontrado!'})
             return;
         }

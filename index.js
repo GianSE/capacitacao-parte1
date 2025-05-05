@@ -14,7 +14,7 @@ app.use(
 app.use(express.json()) //permite ler json
 
 // rotas da API
-const alunoRoutes = require('./routes/alunoRoutes.js')
+const alunoRoutes = require('./routes/alunoRoutes')
 
 app.use('/aluno', alunoRoutes)
 
