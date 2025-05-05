@@ -36,20 +36,28 @@ router.post('/', async (req, res) => {
     }
 });
 
-//Read - leitura de dados
-router.get('/', async(req, res) => {
+// Read - leitura de dados com filtros opcionais
+router.get('/', async (req, res) => {
+    const { ra, name } = req.query;
 
-    try{
+    let filter = {};
 
-        const alunos = await Aluno.find()
-
-        res.status(200).json(alunos)
-
-    } catch (error) {
-        res.status(500).json({ erro: error})
+    // Adiciona filtro por RA ou nome, se fornecidos
+    if (ra) {
+        filter.ra = { $regex: new RegExp(ra, 'i') };
+    }
+    if (name) {
+        // Para busca aproximada (case-insensitive), use RegExp:
+        filter.name = { $regex: new RegExp(name, 'i') };
     }
 
-})
+    try {
+        const alunos = await Aluno.find(filter);
+        res.status(200).json(alunos);
+    } catch (error) {
+        res.status(500).json({ erro: error });
+    }
+});
 
 //leitura dinamica
 router.get('/:id', async (req, res) => {
