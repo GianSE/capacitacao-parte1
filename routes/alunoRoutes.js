@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
         ra,
         cpf,
         createdAt,
-        UpdatedAt
+        updatedAt
     };
 
     try {
@@ -77,7 +77,7 @@ router.patch('/:id', async (req, res) => {
 
     const id = req.params.id
 
-    const{ name, age, ra, cpf, createdAt, UpdatedAt } = req.body
+    const{ name, age, ra, cpf, createdAt, updatedAt } = req.body
 
     const person = {
         name,
@@ -85,7 +85,7 @@ router.patch('/:id', async (req, res) => {
         ra,
         cpf,
         createdAt,
-        UpdatedAt
+        updatedAt
     }
 
     try {

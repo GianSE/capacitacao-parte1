@@ -1,12 +1,27 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const moment = require('moment');
 
-const Aluno = mongoose.model('Aluno', {
+const alunoSchema = new mongoose.Schema({
     name: String,
     age: Number,
     ra: String,
     cpf: String,
-    createdAt: String,
-    updatedAt: String
-})
+    createdAt: {
+        type: String,
+        default: () => moment().format('YYYY-MM-DD HH:mm:ss')
+    },
+    updatedAt: {
+        type: String,
+        default: () => moment().format('YYYY-MM-DD HH:mm:ss')
+    }
+});
 
-module.exports = Aluno
+// Middleware para atualizar a data antes de salvar
+alunoSchema.pre('save', function (next) {
+    this.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
+    next();
+});
+
+const Aluno = mongoose.model('Aluno', alunoSchema);
+
+module.exports = Aluno;
