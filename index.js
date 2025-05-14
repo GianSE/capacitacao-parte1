@@ -29,12 +29,14 @@ app.get('/', (req, res) => {
 
 const DB_USER = process.env.DB_USER
 const DB_PASSWORD = process.env.DB_PASSWORD
+const MongoURL = process.env.MONGO_URL
 
 //entregar uma porta
 mongoose
     .connect(
         //Conectar usando um arquivo .env
-        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@api-parte1.pqv2ajh.mongodb.net/?retryWrites=true&w=majority&appName=api-parte1`
+        //`mongodb+srv://${DB_USER}:${DB_PASSWORD}@api-parte1.pqv2ajh.mongodb.net/?retryWrites=true&w=majority&appName=api-parte1`
+        MongoURL
     )
     .then(() =>{
         console.log("Conectamos ao MongoDB!")

@@ -4,7 +4,7 @@
 		"name": "API Alunos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "44412593",
-		"_collection_link": "https://gian-2971076.postman.co/workspace/Gian's-Workspace~83da9655-d094-414e-8472-6fd7c20bcd0f/collection/44412593-12934de5-2258-453e-8022-d2ffa0101191?action=share&source=collection_link&creator=44412593"
+		"_collection_link": "https://gian-2971076.postman.co/workspace/83da9655-d094-414e-8472-6fd7c20bcd0f/collection/44412593-12934de5-2258-453e-8022-d2ffa0101191?action=share&source=collection_link&creator=44412593"
 	},
 	"item": [
 		{
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n  {\r\n    \"name\": \"Maria Fernanda\",\r\n    \"age\": 50,\r\n    \"ra\": \"8903753\",\r\n    \"cpf\": \"350.645.945-45\"\r\n  }\r\n",
+					"raw": "\r\n  {\r\n    \"name\": \"Lucas Peregrino\",\r\n    \"age\": 28,\r\n    \"ra\": \"22222222\",\r\n    \"cpf\": \"999.999.999-99\"\r\n  }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,7 +48,188 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Aluno 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"name\": \"Maria Fernanda\",\r\n    \"age\": 50,\r\n    \"ra\": \"8903753\",\r\n    \"cpf\": \"350.645.945-45\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/aluno",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-uVycAIyIruOE9kI8eznvF2HrNCg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 May 2025 06:33:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Aluno inserido no sistema com sucesso!\"\n}"
+				},
+				{
+					"name": "Aluno 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"name\": \"Gian Pedro\",\r\n    \"age\": 21,\r\n    \"ra\": \"99988877\",\r\n    \"cpf\": \"350.350.350-35\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/aluno",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-uVycAIyIruOE9kI8eznvF2HrNCg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 May 2025 06:34:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Aluno inserido no sistema com sucesso!\"\n}"
+				},
+				{
+					"name": "Aluno 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"name\": \"Lucas Peregrino\",\r\n    \"age\": 28,\r\n    \"ra\": \"22222222\",\r\n    \"cpf\": \"999.999.999-99\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/aluno",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-uVycAIyIruOE9kI8eznvF2HrNCg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 May 2025 06:36:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Aluno inserido no sistema com sucesso!\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Resgatar Alunos",
@@ -56,25 +237,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/aluno?ra=2",
+					"raw": "{{URL}}/aluno",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"aluno"
-					],
-					"query": [
-						{
-							"key": "ra",
-							"value": "2"
-						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Resgatar Aluno",
+			"name": "Resgatar Aluno(id)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -92,7 +267,7 @@
 			"response": []
 		},
 		{
-			"name": "Atualizar Aluno",
+			"name": "Atualizar Aluno(id)",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -119,18 +294,18 @@
 			"response": []
 		},
 		{
-			"name": "Remover Aluno",
+			"name": "Remover Aluno(id)",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/aluno/6818d3283554d0ee51dbd003",
+					"raw": "{{URL}}/aluno/68243984678858d8fdd42025",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"aluno",
-						"6818d3283554d0ee51dbd003"
+						"68243984678858d8fdd42025"
 					]
 				}
 			},
