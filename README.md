@@ -14,7 +14,7 @@ API RESTful para gerenciamento de dados de alunos, incluindo criação, listagem
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/seu-repo.git
+git clone https://github.com/GianSE/capacitacao-parte1
 
 # Instale as dependências
 npm install
@@ -43,7 +43,7 @@ Você pode testar a API com coleções do Postman:
 3. Selecione os arquivos `.postman_collection.json` localizados na pasta `postman/`.
 4. Execute as requisições conforme os exemplos abaixo.
 
-> 🔐 A API não requer autenticação JWT nesta versão.
+> 🔐 A API não requer autenticação.
 
 ---
 
@@ -172,4 +172,3 @@ Remove um aluno pelo ID.
 
 - A API é aberta e não requer autenticação.
 - Utiliza MongoDB Atlas como banco de dados principal.
-- Ideal para fins educacionais e aprendizado de APIs com Node.js e MongoDB.
